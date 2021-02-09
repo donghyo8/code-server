@@ -1,0 +1,15 @@
+version: "3"
+services:
+
+  traefik:
+    image: traefik:alpine
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${PWD}/traefik.toml:/etc/traefik/traefik.toml
+    ports:
+      - 80:80
+      - 8080:8080 
+  ide:
+    image: nginx:alpine
+    volumes:
+      - ${PWD}/example.com-index.html:/usr/share/nginx/html/index.html

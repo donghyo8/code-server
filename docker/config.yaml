@@ -1,0 +1,7 @@
+bind-addr: 0.0.0.0:5111
+auth: none
+password: user1
+cert: false
+
+# docker build -t test:latest ./
+# docker run -u 0:0 -p 8080:8080 test:latest
